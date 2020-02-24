@@ -10,6 +10,10 @@ body {
   height: 700px;
 }
 
+main{
+  margin-top:50px;
+}
+
 h1 {
   color: #26487d;
   display: inline;
@@ -29,6 +33,7 @@ h3 {
 
 .lista {
   margin: auto;
+  margin-top:50px;
   width: 80%;
   background-color: rgba(77, 68, 68, 0.527);
   color: white;
