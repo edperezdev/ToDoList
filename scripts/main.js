@@ -25,13 +25,15 @@ form.addEventListener("submit", function() {
                     </div>`;
   taskscontent.appendChild(task);
 
+  // Haciendo clic en el botón de edición de la tarea agregada
+
   let editar = task.querySelector(".editar");
   editar.addEventListener("click", function() {
     let newedit = prompt("Ingrese el nuevo nombre de la tarea");
 
     if (newedit == null) {
-       return;
-    } 
+      return;
+    }
 
     function hasWhiteSpace(newedit) {
       return /^\s+$/.test(newedit);
@@ -39,21 +41,22 @@ form.addEventListener("submit", function() {
 
     if (hasWhiteSpace(newedit) == false && newedit !== "") {
       task.querySelector(".texto").textContent = newedit;
-    } 
-             
-    else {
+    } else {
       alert("Error: Formato incorrecto");
     }
-    console.log (newedit)
   });
+
+  // Haciendo clic en el ícono del cesto de basura para borrar una tarea
 
   let trash = task.querySelector(".fa-trash-alt");
   trash.addEventListener("click", function() {
     event.preventDefault();
-    confirm("¿Está seguro que quiere borrar la tarea?")
+    confirm("¿Está seguro de que quiere borrar la tarea?")
       ? this.parentNode.parentNode.parentNode.remove()
       : "";
   });
+
+  // Haciendo clic en el ícono del check para declarar completa una tarea
 
   let completed = task.querySelector(".fa-check-circle");
   completed.addEventListener("click", function() {
@@ -78,7 +81,7 @@ form.addEventListener("submit", function() {
       let trash2 = task2.querySelector(".fa-trash-alt");
       trash2.addEventListener("click", function() {
         event.preventDefault();
-        confirm("¿Está seguro que quiere borrar la tarea?")
+        confirm("¿Está seguro de que quiere borrar la tarea?")
           ? this.parentNode.parentNode.parentNode.remove()
           : "";
       });
@@ -106,6 +109,6 @@ botonincompletos.addEventListener("click", function() {
   event.preventDefault();
   taskscontent.style.display = "block";
   comptaskscontent.style.display = "none";
-  botonincompletos.classList.toggle("isactive");
+  botonincompletos.classList.add("isactive");
   botoncompletados.classList.remove("isactive");
 });
