@@ -19,11 +19,30 @@ form.addEventListener("submit", function() {
                           <i class='fas fa-check-circle'></i>
                                <span class="texto">${entry.value}</span>
                       </div>
-                      <div>
+                      <div><span class="editar">editar</span>
                           <i class="far fa-trash-alt"></i>
                       </div>
                     </div>`;
   taskscontent.appendChild(task);
+
+let editar = task.querySelector(".editar");
+editar.addEventListener("click", function(){
+  let newedit = prompt("Ingrese el nuevo nombre de la tarea")
+  function hasWhiteSpace(newedit) {
+    return /^\s+$/.test(newedit)
+  }
+  
+  
+  if (hasWhiteSpace(newedit) == false){
+    task.querySelector(".texto").textContent = newedit
+  }
+else {
+  alert("Error: Formato incorrecto");
+}
+
+})
+
+
 
   let trash = task.querySelector(".fa-trash-alt");
   trash.addEventListener("click", function() {

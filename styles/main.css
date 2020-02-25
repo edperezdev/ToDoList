@@ -132,6 +132,13 @@ h3 {
 .texto {
   margin-left: 20px;
 }
+
+.editar{
+  margin-right:20px;
+  font-size:0.8rem;
+  color:rgb(152, 166, 206);
+  cursor:pointer;
+}
 #completetasks-content .fa-check-circle {
   color: rgb(73, 202, 73);
   cursor: default;
