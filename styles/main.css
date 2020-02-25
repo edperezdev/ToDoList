@@ -10,8 +10,8 @@ body {
   height: 700px;
 }
 
-main{
-  margin-top:50px;
+main {
+  margin-top: 50px;
 }
 
 h1 {
@@ -33,7 +33,7 @@ h3 {
 
 .lista {
   margin: auto;
-  margin-top:50px;
+  margin-top: 50px;
   width: 80%;
   background-color: rgba(77, 68, 68, 0.527);
   color: white;
@@ -133,11 +133,16 @@ h3 {
   margin-left: 20px;
 }
 
-.editar{
-  margin-right:20px;
-  font-size:0.8rem;
-  color:rgb(152, 166, 206);
-  cursor:pointer;
+.editar {
+  margin-right: 20px;
+  font-size: 0.8rem;
+  color: rgb(152, 166, 206);
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+}
+
+.editar:hover {
+  color: white;
 }
 #completetasks-content .fa-check-circle {
   color: rgb(73, 202, 73);

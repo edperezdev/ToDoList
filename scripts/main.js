@@ -25,24 +25,27 @@ form.addEventListener("submit", function() {
                     </div>`;
   taskscontent.appendChild(task);
 
-let editar = task.querySelector(".editar");
-editar.addEventListener("click", function(){
-  let newedit = prompt("Ingrese el nuevo nombre de la tarea")
-  function hasWhiteSpace(newedit) {
-    return /^\s+$/.test(newedit)
-  }
-  
-  
-  if (hasWhiteSpace(newedit) == false && newedit !== ""){
-    task.querySelector(".texto").textContent = newedit
-  }
-else {
-  alert("Error: Formato incorrecto");
-}
+  let editar = task.querySelector(".editar");
+  editar.addEventListener("click", function() {
+    let newedit = prompt("Ingrese el nuevo nombre de la tarea");
 
-})
+    if (newedit == null) {
+       return;
+    } 
 
+    function hasWhiteSpace(newedit) {
+      return /^\s+$/.test(newedit);
+    }
 
+    if (hasWhiteSpace(newedit) == false && newedit !== "") {
+      task.querySelector(".texto").textContent = newedit;
+    } 
+             
+    else {
+      alert("Error: Formato incorrecto");
+    }
+    console.log (newedit)
+  });
 
   let trash = task.querySelector(".fa-trash-alt");
   trash.addEventListener("click", function() {
@@ -94,9 +97,8 @@ botoncompletados.addEventListener("click", function() {
   event.preventDefault();
   taskscontent.style.display = "none";
   comptaskscontent.style.display = "block";
-  botoncompletados.classList.add("isactive")
-  botonincompletos.classList.remove("isactive")
-  
+  botoncompletados.classList.add("isactive");
+  botonincompletos.classList.remove("isactive");
 });
 
 let botonincompletos = document.getElementById("botonincompletos");
@@ -104,9 +106,6 @@ botonincompletos.addEventListener("click", function() {
   event.preventDefault();
   taskscontent.style.display = "block";
   comptaskscontent.style.display = "none";
-  botonincompletos.classList.toggle("isactive")
-  botoncompletados.classList.remove("isactive")
- 
-
-  
+  botonincompletos.classList.toggle("isactive");
+  botoncompletados.classList.remove("isactive");
 });
