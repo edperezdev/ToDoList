@@ -18,7 +18,7 @@ form.addEventListener("submit", function() {
   task.innerHTML = `<div class='wrap'>
                       <div class="checkytexto">
                           <i class='fas fa-check-circle'></i>
-                               <span class="texto">${entry.value}</span>
+                               <p class="texto">${entry.value}</p>
                       </div>
                       <div><span class="editar">editar</span>
                           <i class="far fa-trash-alt"></i>
@@ -79,9 +79,9 @@ form.addEventListener("submit", function() {
       task2.innerHTML = `<div class='fade2'>
     <div class="checkytexto">
         <i class='fas fa-check-circle'></i>
-             <span class="texto">${
+             <p class="texto">${
                task.querySelector(".texto").textContent
-             }</span>
+             }</p>
     </div>
     <div>
         <i class="far fa-trash-alt"></i>
