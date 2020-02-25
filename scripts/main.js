@@ -14,6 +14,7 @@ const comptaskscontent = document.getElementById("completetasks-content");
 form.addEventListener("submit", function() {
   event.preventDefault();
   let task = document.createElement("article");
+
   task.innerHTML = `<div class='wrap'>
                       <div class="checkytexto">
                           <i class='fas fa-check-circle'></i>
@@ -51,9 +52,15 @@ form.addEventListener("submit", function() {
   let trash = task.querySelector(".fa-trash-alt");
   trash.addEventListener("click", function() {
     event.preventDefault();
-    confirm("¿Está seguro de que quiere borrar la tarea?")
-      ? this.parentNode.parentNode.parentNode.remove()
-      : "";
+    let conf = confirm("¿Está seguro de que quiere borrar la tarea?");
+    if (conf == true) {
+      task.classList.add("fade");
+      setTimeout(function() {
+        task.remove();
+      }, 1000);
+    } else {
+      ("");
+    }
   });
 
   // Haciendo clic en el ícono del check para declarar completa una tarea
@@ -76,14 +83,23 @@ form.addEventListener("submit", function() {
     </div>
   </div>`;
       comptaskscontent.appendChild(task2);
-      this.parentNode.parentNode.parentNode.remove();
+      task.classList.add("fade");
+      setTimeout(function() {
+        task.remove();
+      }, 1000);
 
       let trash2 = task2.querySelector(".fa-trash-alt");
       trash2.addEventListener("click", function() {
         event.preventDefault();
-        confirm("¿Está seguro de que quiere borrar la tarea?")
-          ? this.parentNode.parentNode.parentNode.remove()
-          : "";
+        let conf = confirm("¿Está seguro de que quiere borrar la tarea?");
+        if (conf == true) {
+          task2.classList.add("fade");
+          setTimeout(function() {
+            task2.remove();
+          }, 1000);
+        } else {
+          ("");
+        }
       });
     } else {
       ("");
