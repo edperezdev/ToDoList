@@ -33,7 +33,7 @@ editar.addEventListener("click", function(){
   }
   
   
-  if (hasWhiteSpace(newedit) == false){
+  if (hasWhiteSpace(newedit) == false && newedit !== ""){
     task.querySelector(".texto").textContent = newedit
   }
 else {
