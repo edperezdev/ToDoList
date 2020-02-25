@@ -24,7 +24,12 @@ form.addEventListener("submit", function() {
                           <i class="far fa-trash-alt"></i>
                       </div>
                     </div>`;
+
   taskscontent.appendChild(task);
+
+  setTimeout(function() {
+    task.querySelector(".wrap").className = "fade2";
+  }, 200);
 
   // Haciendo clic en el botón de edición de la tarea agregada
 
@@ -71,7 +76,7 @@ form.addEventListener("submit", function() {
     let resul = confirm("¿Está seguro de haber completado la tarea?");
     if (resul == true) {
       let task2 = document.createElement("article");
-      task2.innerHTML = `<div class='wrap'>
+      task2.innerHTML = `<div class='fade2'>
     <div class="checkytexto">
         <i class='fas fa-check-circle'></i>
              <span class="texto">${

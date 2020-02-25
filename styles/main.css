@@ -124,22 +124,26 @@ h3 {
   border-top: 1px solid rgb(201, 188, 188);
 }
 
-
-article{
+article {
   opacity: 1;
-  transition: all ease-in-out 1s ;
+  transition: all ease-in-out 1s;
 }
 
 .fade {
   opacity: 0;
 }
-
+.fade2 {
+  opacity: 1;
+  display: flex;
+  justify-content: space-between;
+  transition: all ease-in-out 1s;
+}
 
 .wrap {
   display: flex;
   justify-content: space-between;
-  opacity: 1;
-  transition: all ease-in-out 1s ;
+  opacity: 0;
+  transition: all ease-in-out 1s;
 }
 
 .texto {
