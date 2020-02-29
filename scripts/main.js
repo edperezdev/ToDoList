@@ -1,7 +1,9 @@
 // Fecha para el título
-
-let dt = new Date();
-document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+let meses = new Array ("enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre");
+let diasSemana = new Array("domingo","lunes","martes","miércoles","jueves","viernes","sábado");
+let f=new Date();
+let fecha = diasSemana[f.getDay()] + " " + f.getDate() + " de " + meses[f.getMonth()] + " del " + f.getFullYear();
+document.getElementById("datetime").innerText = fecha
 
 // Variables
 const form = document.querySelector("form");
